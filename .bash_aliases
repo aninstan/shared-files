@@ -33,7 +33,7 @@ alias gps='git push'				    # Push changes
 alias gsh='git stash'                               # Stash current changes
 alias ga='git add'                                  # Stage a specific file
 alias gaa='git add .'                               # Stage all changes
-alias gcm='git commit -m'                           # Commit with a message
+alias gcm='git commit -m "$*"'                      # Commit with a message
 alias gchb='git checkout -b'                        # Create and switch to a new branch
 alias gch='git checkout'                            # Switch branches
 
