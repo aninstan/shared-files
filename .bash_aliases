@@ -16,6 +16,7 @@ alias c='clear'             # Clear terminal output
 alias mkcd='mkdir -p "$1" && cd "$1"'      # Make and enter a directory
 alias home='cd ~'                          # Go to home directory
 alias winhome='cd /mnt/c/Users/"$1"'       # Go to Windows home directory
+alias symlink='ln -s'			   # Symlink
 
 # System and process utilities
 alias update='sudo apt update && sudo apt upgrade -y'    # Update & upgrade system packages
