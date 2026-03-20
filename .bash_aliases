@@ -13,10 +13,30 @@ alias c='clear'             # Clear terminal output
 # =======================================
 
 # Directory and path shortcuts
-alias mkcd='mkdir -p "$1" && cd "$1"'      # Make and enter a directory
-alias home='cd ~'                          # Go to home directory
-alias winhome='cd /mnt/c/Users/"$1"'       # Go to Windows home directory
-alias symlink='ln -s'			   # Symlink
+mkcd() { 
+    mkdir -p "$1" && cd "$1"
+}
+
+winhome() { 
+    cd "/mnt/c/Users/$1"
+}
+alias symlink='ln -s'						 # Symlink
+
+sdir() {							 # Searches irectories
+    if [ -z "$1" ]; then
+        echo "Usage: sdir <directory-name>"
+        return 1
+    fi
+    find ~ -type d -name "$1" -printf '%p\n'
+}
+
+search() {							 # Searches files and directories
+    if [ -z "$1" ]; then
+        echo "Usage: search <pattern>"
+        return 1
+    fi
+    find ~ -name "*$1*" -printf '%p\n'
+}
 
 # System and process utilities
 alias update='sudo apt update && sudo apt upgrade -y'    # Update & upgrade system packages
@@ -33,9 +53,16 @@ alias gps='git push'				    # Push changes
 alias gsh='git stash'                               # Stash current changes
 alias ga='git add'                                  # Stage a specific file
 alias gaa='git add .'                               # Stage all changes
-alias gcm='git commit -m "$*"'                      # Commit with a message
 alias gchb='git checkout -b'                        # Create and switch to a new branch
 alias gch='git checkout'                            # Switch branches
+
+gcm() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: gcm <commit message>"
+        return 1
+    fi
+    git commit -m "$*"
+}
 
 # Status, log, and branch management
 alias gst='git status'                              # Show git status
@@ -51,8 +78,8 @@ gcb() {                                             # Create branch and push to 
         echo "Usage: gcb <branch-name>"
         return 1
     fi
-    git checkout -b "$1"'			    # Create and switch to branch
-    git push -u origin "$1"'			    # Push and set upstream
+    git checkout -b "$1"			    # Create and switch to branch
+    git push -u origin "$1"			    # Push and set upstream
 }
 
 gpsh() {                                            # Push current branch to remote
