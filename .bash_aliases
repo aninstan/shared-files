@@ -43,6 +43,9 @@ alias update='sudo apt update && sudo apt upgrade -y'    # Update & upgrade syst
 alias ports='ss -tulpn'                                  # List all open ports with status
 alias psg='ps aux | grep -i'                             # Search running processes by keyword
 
+# Dos2unix all files in folder
+alias d2u="find . -type f -exec dos2unix {} +"		
+
 # =======================================
 # GIT SHORTCUTS
 # =======================================
