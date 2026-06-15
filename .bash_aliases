@@ -22,7 +22,7 @@ winhome() {
 }
 alias symlink='ln -s'						 # Symlink
 
-sdir() {							 # Searches irectories
+sdir() {							 # Searches directories
     if [ -z "$1" ]; then
         echo "Usage: sdir <directory-name>"
         return 1
@@ -94,6 +94,8 @@ gpsh() {                                            # Push current branch to rem
 # Docker Compose commands
 alias dcu='docker compose up'                     # Start services defined in docker-compose
 alias dcd='docker compose down'                   # Stop and remove services
+alias dcuro='docker compose up --remove-orphans'
+alias dcdv='docker compose down -v'
 
 # Container management
 alias dst='docker start'                          # Start a stopped container
@@ -117,6 +119,18 @@ dexec() {                                        # Enter container shell
         return 1
     fi
     docker exec -it "$1" "${2:-bash}"            # Default to bash if shell not provided
+}
+
+dcuf() {
+    docker compose -f "$1" up "${@:2}"
+}
+
+dcdf() {
+    docker compose -f "$1" down "${@:2}"
+}
+
+dcdfv() {
+    docker compose -f "$1" down -v --remove-orphans "${@:2}"
 }
 
 # =======================================
