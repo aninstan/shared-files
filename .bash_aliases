@@ -42,6 +42,7 @@ search() {							 # Searches files and directories
 alias update='sudo apt update && sudo apt upgrade -y'    # Update & upgrade system packages
 alias ports='ss -tulpn'                                  # List all open ports with status
 alias psg='ps aux | grep -i'                             # Search running processes by keyword
+alias src='. ~/.bashrc'					 # Reload source
 
 # Dos2unix all files in folder
 alias d2u='dos2unix'
