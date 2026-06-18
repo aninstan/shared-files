@@ -43,10 +43,26 @@ alias update='sudo apt update && sudo apt upgrade -y'    # Update & upgrade syst
 alias ports='ss -tulpn'                                  # List all open ports with status
 alias psg='ps aux | grep -i'                             # Search running processes by keyword
 alias src='. ~/.bashrc'					 # Reload source
+alias macsrc='source ~/.zshrc'                           # Reload on mac/zsh
 
 # Dos2unix all files in folder
 alias d2u='dos2unix'
 alias d2ud="find . -type f -exec dos2unix {} +"		
+
+# Overrides for basic commands
+alias ls='ls -l'
+alias lsa='ls -la'
+
+# Mac specifics
+alias copy='pbcopy <'
+
+alias brewi='brew install'
+alias brewic='brew install --cask'
+alias brewupg='brew upgrade --greedy'
+
+alias brewu='brew uninstall'
+alias brewuc='brew uninstall --cask'
+alias brewc='brew cleanup'
 
 # =======================================
 # GIT SHORTCUTS
@@ -166,3 +182,11 @@ listc() {                                         # Search aliases/functions by 
     fi
     grep -i --color=auto "$1" ~/.bash_aliases
 }
+
+# =======================================
+# KUBERNETES / RANCHER
+# =======================================
+
+alias k='k9s'					# Start k9s
+alias rdsd='rdctl shutdown'			# Shutdown rancher desktop
+alias rdrs='rdctl reset'			# Reset kubernetes and containers
