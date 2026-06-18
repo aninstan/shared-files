@@ -1,0 +1,73 @@
+# ~/.config/k9s/skins/tokyonight-storm.yaml
+k9s:
+  body:
+    fgColor: "#c0caf5"
+    bgColor: "#24283b"
+    logoColor: "#7aa2f7"
+  info:
+    sectionColor: "#bb9af7"
+    fgColor: "#7aa2f7"
+  frame:
+    border:
+      fgColor: "#414868"
+      focusColor: "#7aa2f7"
+    menu:
+      fgColor: "#7aa2f7"
+      keyColor: "#bb9af7"
+      numKeyColor: "#ff9e64"
+    crumbs:
+      fgColor: "#24283b"
+      bgColor: "#7aa2f7"
+      activeBgColor: "#2ac3de"
+    status:
+      newColor: "#73daca"
+      modifyColor: "#7aa2f7"
+      deleteColor: "#f7768e"
+      errorColor: "#f7768e"
+      pendingColor: "#e0af68"
+      completedColor: "#9ece6a"
+    title:
+      fgColor: "#7aa2f7"
+      bgColor: "#24283b"
+      highlightColor: "#ff9e64"
+      counterColor: "#73daca"
+      filterColor: "#bb9af7"
+  views:
+    table:
+      fgColor: "#c0caf5"
+      bgColor: "#24283b"
+      cursorFgColor: "#24283b"
+      cursorBgColor: "#7aa2f7"
+      markColor: "#e0af68"
+      header:
+        fgColor: "#9ece6a"
+        bgColor: "#24283b"
+    xray:
+      fgColor: "#c0caf5"
+      bgColor: "#24283b"
+      cursorColor: "#414868"
+      graphicColor: "#7aa2f7"
+      showVisual: true
+    charts:
+      bgColor: "#24283b"
+      chartBgColor: "#24283b"
+      dialBgColor: "#24283b"
+      defaultDialColor: "#7aa2f7"
+      defaultChartColor: "#7aa2f7"
+      resourceColors:
+        cpu:
+          - "#7aa2f7"
+          - "#bb9af7"
+        mem:
+          - "#2ac3de"
+          - "#9ece6a"
+    yaml:
+      keyColor: "#bb9af7"
+      valueColor: "#c0caf5"
+      colonColor: "#414868"
+    logs:
+      fgColor: "#c0caf5"
+      bgColor: "#1f2335"
+      indicator:
+        fgColor: "#7aa2f7"
+        bgColor: "#24283b"
