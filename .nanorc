@@ -1,0 +1,15 @@
+# Save
+bind ^S writeout main
+
+# Exit
+bind ^X exit main
+
+# Delete previous word
+bind ^H chopwordleft all
+
+# Delete current line
+bind M-K cut main
+
+# Duplicate current line
+bind M-D copytext main
+bind M-P uncut main
