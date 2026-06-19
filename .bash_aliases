@@ -172,6 +172,14 @@ alias qud='./mvnw quarkus:dev'                   # Start Quarkus in dev mode
 alias qudd='./mvnw quarkus:dev -Ddebug'          # Start Quarkus dev mode with debug enabled
 
 # =======================================
+# PYTHON
+# =======================================
+
+alias venv=‘python3 -m venv .venv’		# Create venv
+alias avenv='source .venv/bin/Activate'		# Activate venv
+alias req=‘pip install -r requirements.txt’	# Install requirements
+
+# =======================================
 # LIST COMMANDS
 # =======================================
 
@@ -187,6 +195,8 @@ listc() {                                         # Search aliases/functions by 
 # KUBERNETES / RANCHER
 # =======================================
 
-alias k='k9s'					# Start k9s
+alias k='kubectl'				# Kubectl shortcut
+alias ks='k9s'					# Start k9s
+
 alias rdsd='rdctl shutdown'			# Shutdown rancher desktop
 alias rdrs='rdctl reset'			# Reset kubernetes and containers
