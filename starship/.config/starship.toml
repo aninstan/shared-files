@@ -1,0 +1,91 @@
+
+# Starship prompt — Tokyo Night Storm (retro/pixel edition)
+# Segments: [os+user] [pwd] [git] [lang] [time] [arrow]
+# Backgrounds shade from darker -> lighter blue as you move toward the arrow.
+# Text color is constant across every segment — only the background shifts.
+# Each segment is a self-contained "pill" (its own end-caps), so empty
+# segments (no git repo, no detected language) vanish completely with no
+# leftover color seam, since nothing depends on a neighboring module's state.
+# Pair with a pixel/bitmap Nerd Font in Ghostty — see recommendations in chat.
+ 
+palette = "tokyo_night_storm"
+add_newline = true
+ 
+format = """
+$os$username$directory$git_branch$git_status$nodejs_version$python_version$rust_version$golang_version$java_version$c_version$time
+$character
+"""
+ 
+[palettes.tokyo_night_storm]
+base   = "#1d202f"  # constant text color on every segment
+shade1 = "#5f7cbd"  # user/os      (darkest)
+shade2 = "#7aa2f7"  # directory    (theme's base blue)
+shade3 = "#8fb3fa"  # git
+shade4 = "#a9c5fc"  # language
+shade5 = "#c4d7fe"  # time         (lightest)
+accent = "#89ddff"  # arrow — brightest, still same family, no bg
+red    = "#f7768e"
+ 
+[os]
+disabled = false
+format = "[](fg:shade1)[ $symbol](bg:shade1 fg:base)"
+ 
+[os.symbols]
+Arch = "󰣇 "
+Linux = " "
+Macos = " "
+Windows = " "
+ 
+[username]
+show_always = true
+format = "[$user ](bg:shade1 fg:base)[](fg:shade1)"
+style_user = "bg:shade1 fg:base"
+style_root = "bg:shade1 fg:red"
+ 
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[](fg:shade2)[ $path ](bg:shade2 fg:base)[](fg:shade2)"
+ 
+[git_branch]
+symbol = " "
+format = "[](fg:shade3)[ $symbol$branch](bg:shade3 fg:base)"
+ 
+[git_status]
+format = "([ $all_status$ahead_behind]($style))[ ](bg:shade3 fg:base)[](fg:shade3)"
+style = "bg:shade3 fg:base"
+ 
+[nodejs_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[python_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[rust_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[golang_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[java_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[c_version]
+symbol = " "
+format = "[](fg:shade4)[ $symbol$version ](bg:shade4 fg:base)[](fg:shade4)"
+ 
+[time]
+disabled = false
+time_format = "%H:%M"
+format = "[](fg:shade5)[  $time ](bg:shade5 fg:base)[](fg:shade5)"
+ 
+[character]
+success_symbol = "[➜](bold accent)"
+error_symbol = "[➜](bold red)"
+vimcmd_symbol = "[❮](bold accent)"
+
